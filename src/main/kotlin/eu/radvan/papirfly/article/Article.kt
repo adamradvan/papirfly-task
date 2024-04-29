@@ -64,7 +64,6 @@ class Article(
         get() = allCategoryIds.toList()
         private set
 
-
     private fun checkCurrency(price: BigDecimal, currency: Currency?) {
         if (price != BigDecimal.ZERO && currency == null) {
             error("Currency cannot be null if price is not zero.")

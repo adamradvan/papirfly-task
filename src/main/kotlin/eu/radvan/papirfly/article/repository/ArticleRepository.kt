@@ -1,32 +1,29 @@
-package eu.radvan.papirfly.category.repository
+package eu.radvan.papirfly.article.repository
 
-import eu.radvan.papirfly.category.Category
+import eu.radvan.papirfly.article.Article
 import org.springframework.data.jpa.domain.Specification
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor
 import org.springframework.stereotype.Repository
 import java.util.*
 
-
 @Repository
-interface CategoryRepository : JpaRepository<Category, UUID>, JpaSpecificationExecutor<Category> {
+interface ArticleRepository : JpaRepository<Article, UUID>, JpaSpecificationExecutor<Article> {
 
-    fun findBySequenceId(sequenceId: Long): Category?
-
-    fun findAllBySequenceIdIn(categorySequenceIds: List<Long>): List<Category>
+    fun findBySequenceId(sequenceId: Long): Article?
 
 }
 
-object CategorySpecs {
+object ArticleSpecs {
 
-    fun descriptionEquals(description: String?): Specification<Category> =
+    fun descriptionEquals(description: String?): Specification<Article> =
         Specification { root, _, criteriaBuilder ->
             description?.let {
                 criteriaBuilder.equal(root.get<String>("description"), it)
             }
         }
 
-    fun nameContainsIgnoringCase(name: String?): Specification<Category> =
+    fun nameContainsIgnoringCase(name: String?): Specification<Article> =
         Specification { root, _, criteriaBuilder ->
             name?.let {
                 criteriaBuilder.like(
