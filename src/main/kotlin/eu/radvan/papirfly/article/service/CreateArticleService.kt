@@ -5,6 +5,7 @@ import eu.radvan.papirfly.article.controller.ArticleResponse
 import eu.radvan.papirfly.article.controller.toResponse
 import eu.radvan.papirfly.article.exception.ArticleCurrencyMissingException
 import eu.radvan.papirfly.article.repository.ArticleRepository
+import eu.radvan.papirfly.article.service.command.CreateArticleCommand
 import eu.radvan.papirfly.category.Category
 import eu.radvan.papirfly.category.repository.CategoryRepository
 import org.springframework.stereotype.Service
@@ -13,7 +14,7 @@ import java.math.BigDecimal
 
 @Service
 class CreateArticleService(
-    private val repository: ArticleRepository,
+    private val articleRepository: ArticleRepository,
     private val categoryRepository: CategoryRepository,
 ) {
 
@@ -34,7 +35,7 @@ class CreateArticleService(
             currency = command.currency,
             categoryIds = categories.map { it.id }
         ).let {
-            val saved = repository.saveAndFlush(it)
+            val saved = articleRepository.saveAndFlush(it)
 
             saved.toResponse(
                 categorySequenceIds = categories.map { category -> category.sequenceId!! }

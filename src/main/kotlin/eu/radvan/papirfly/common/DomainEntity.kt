@@ -17,7 +17,6 @@ abstract class DomainEntity(
 
     @UpdateTimestamp
     var updatedAt: Instant = Instant.now()
-        private set
 
     override fun equals(other: Any?): Boolean {
         other ?: return false

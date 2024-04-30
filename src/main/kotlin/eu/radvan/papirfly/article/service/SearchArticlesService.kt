@@ -4,6 +4,7 @@ import eu.radvan.papirfly.article.controller.ArticleResponse
 import eu.radvan.papirfly.article.controller.toResponse
 import eu.radvan.papirfly.article.repository.ArticleRepository
 import eu.radvan.papirfly.article.repository.ArticleSpecs
+import eu.radvan.papirfly.article.service.query.SearchArticlesQuery
 import eu.radvan.papirfly.category.repository.CategoryRepository
 import org.springframework.stereotype.Service
 

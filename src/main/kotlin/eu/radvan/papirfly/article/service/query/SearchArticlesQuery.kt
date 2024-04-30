@@ -1,4 +1,4 @@
-package eu.radvan.papirfly.article.service
+package eu.radvan.papirfly.article.service.query
 
 data class SearchArticlesQuery(
     val name: String?,

@@ -19,16 +19,16 @@
 		<java.version>21</java.version>
 		<kotlin.version>1.9.23</kotlin.version>
 		<org.springdoc.version>2.5.0</org.springdoc.version>
+		<com.ninja-squad.springmockk.version>4.0.2</com.ninja-squad.springmockk.version>
+		<io.kotest.kotest-assertions-core-jvm.version>5.8.1</io.kotest.kotest-assertions-core-jvm.version>
+		<io.hypersistence.hypersistence-utils-hibernate-63.version>3.7.5
+		</io.hypersistence.hypersistence-utils-hibernate-63.version>
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-jooq</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -57,7 +57,7 @@
 		<dependency>
 			<groupId>io.hypersistence</groupId>
 			<artifactId>hypersistence-utils-hibernate-63</artifactId>
-			<version>3.7.5</version>
+			<version>${io.hypersistence.hypersistence-utils-hibernate-63.version}</version>
 		</dependency>
 
 		<dependency>
@@ -89,24 +89,15 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-testcontainers</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.testcontainers</groupId>
-			<artifactId>junit-jupiter</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.testcontainers</groupId>
-			<artifactId>postgresql</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
 			<groupId>io.kotest</groupId>
 			<artifactId>kotest-assertions-core-jvm</artifactId>
-			<version>5.5.5</version>
+			<version>${io.kotest.kotest-assertions-core-jvm.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.ninja-squad</groupId>
+			<artifactId>springmockk</artifactId>
+			<version>${com.ninja-squad.springmockk.version}</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>

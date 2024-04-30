@@ -1,4 +1,4 @@
-package eu.radvan.papirfly.category.service
+package eu.radvan.papirfly.category.service.command
 
 import eu.radvan.papirfly.category.controller.CreateCategoryRequest
 

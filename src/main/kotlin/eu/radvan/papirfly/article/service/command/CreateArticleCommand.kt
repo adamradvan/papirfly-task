@@ -1,4 +1,4 @@
-package eu.radvan.papirfly.article.service
+package eu.radvan.papirfly.article.service.command
 
 import eu.radvan.papirfly.article.controller.CreateArticleRequest
 import eu.radvan.papirfly.common.Currency
